@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النخبة الحديثة | Modern-elite.alnokhba</title>
+    
+    <!-- تحميل Tailwind CSS للتنسيق الفخم -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل الخط العربي (تاجوال) -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات المستقرة (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; background-color: #fafafa; overflow-x: hidden; }
+        .emerald-gradient { background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #065f46 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gold-glow { text-shadow: 0 0 15px rgba(245, 158, 11, 0.5); }
+        .btn-gold { background-color: #f59e0b; color: #022c22; transition: all 0.3s ease; }
+        .btn-gold:hover { background-color: #d97706; transform: scale(1.05); shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .chat-scroll::-webkit-scrollbar { width: 5px; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: #059669; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- نافبار (Header) -->
+    <nav class="fixed top-0 w-full z-50 emerald-gradient text-white p-4 shadow-2xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-amber-500 w-12 h-12 rounded-xl flex items-center justify-center font-black text-emerald-950 text-xl shadow-lg">N</div>
+                <span class="text-xl font-bold tracking-tighter gold-glow">Modern-elite.alnokhba</span>
+            </div>
+            <div class="hidden md:flex gap-10 text-sm font-bold opacity-90">
+                <a href="#projects" class="hover:text-amber-400 transition">أعمالنا</a>
+                <a href="#ai-hub" class="hover:text-amber-400 transition">المُسعّر الذكي</a>
+                <a href="#about" class="hover:text-amber-400 transition">عن النخبة</a>
+            </div>
+            <a href="https://wa.me/966506190901" class="bg-emerald-600 px-6 py-2 rounded-full text-xs font-black shadow-lg hover:bg-emerald-500 transition flex items-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i> طلب تسعيرة
+            </a>
+        </div>
+    </nav>
+
+    <!-- الواجهة الرئيسية (Hero) -->
+    <header class="h-screen emerald-gradient flex items-center justify-center text-white relative overflow-hidden pt-16">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="text-center px-6 z-10 animate-up">
+            <div class="mb-10 inline-block p-12 border-2 border-amber-400/20 rounded-[5rem] glass-card shadow-2xl">
+                <h1 class="text-8xl md:text-[10rem] font-black text-amber-400 tracking-tighter drop-shadow-2xl">النخبة</h1>
+                <p class="text-xl md:text-3xl font-light tracking-[0.5em] uppercase text-white/50">Industrial Luxury</p>
+            </div>
+            <h2 class="text-2xl md:text-6xl font-bold mb-14 text-emerald-50 leading-tight">فخامة في التصميم.. دقة في التنفيذ</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#projects" class="btn-gold px-14 py-6 rounded-full font-black text-xl shadow-2xl">معرض الصور الواقعية</a>
+                <a href="#ai-hub" class="bg-white/10 border border-white/20 px-14 py-6 rounded-full font-bold text-xl backdrop-blur-md hover:bg-white/20 transition">المهندس الذكي ✨</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- المميزات -->
+    <section id="about" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+            <div class="p-12 rounded-[4rem] bg-slate-50 border border-slate-100 hover:border-amber-400 transition-all shadow-sm">
+                <div class="text-emerald-800 text-5xl mb-8"><i class="fas fa-shield-halved"></i></div>
+                <h3 class="text-3xl font-black mb-4 text-emerald-950">جودة معيارية</h3>
+                <p class="text-slate-500 text-lg leading-relaxed">نستخدم أجود أنواع الأخشاب الطبيعية وقطاعات الألمونيوم العالمية.</p>
+            </div>
+            <div class="p-12 rounded-[4rem] bg-slate-50 border border-slate-100 hover:border-amber-400 transition-all shadow-sm">
+                <div class="text-emerald-800 text-5xl mb-8"><i class="fas fa-microchip"></i></div>
+                <h3 class="text-3xl font-black mb-4 text-emerald-950">تقنيات حديثة</h3>
+                <p class="text-slate-500 text-lg leading-relaxed">نستخدم الذكاء الاصطناعي في هندسة التصميم وحساب التكاليف.</p>
+            </div>
+            <div class="p-12 rounded-[4rem] bg-slate-50 border border-slate-100 hover:border-amber-400 transition-all shadow-sm">
+                <div class="text-emerald-800 text-5xl mb-8"><i class="fas fa-medal"></i></div>
+                <h3 class="text-3xl font-black mb-4 text-emerald-950">ضمان النخبة</h3>
+                <p class="text-slate-500 text-lg leading-relaxed">نلتزم بتقديم ضمان حقيقي وشامل على كافة أعمالنا المنفذة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- المُسعّر الذكي (AI Hub) -->
+    <section id="ai-hub" class="py-32 bg-slate-100 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 animate-up">
+                <span class="bg-emerald-200 text-emerald-800 px-8 py-3 rounded-full font-black text-sm mb-8 inline-block uppercase tracking-widest shadow-sm">AI Price Estimator</span>
+                <h2 class="text-5xl md:text-7xl font-black text-emerald-950 mb-12 tracking-tighter">المُسعّر الذكي للنخبة</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-white p-16 rounded-[4rem] shadow-xl border border-slate-100 text-right">
+                        <input id="estInput" type="text" placeholder="اكتب متطلبات المشروع (مثال: دولاب خشبي بطول 2 متر، ألمونيوم فضي، 3 أدراج)..." class="w-full bg-slate-50 border border-slate-300 rounded-[2rem] px-8 py-6 text-lg font-bold outline-none focus:border-emerald-600 mb-10 shadow-sm">
+                        <button id="estBtn" onclick="getEstimate()" class="btn-gold w-full py-6 rounded-[2rem] font-black text-xl shadow-lg"><i class="fas fa-wand-sparkles"></i> احسب التكلفة التقديرية ✨</button>
+                    </div>
+                    <div id="estResult" class="hidden flex-col bg-gradient-to-br from-emerald-950 to-emerald-800 p-16 rounded-[4rem] shadow-2xl border border-amber-400/20 text-white">
+                        <p class="text-amber-300 font-black mb-6 text-lg uppercase">نتيجة التحليل الهندسي</p>
+                        <div id="estContent" class="space-y-8 text-right text-xl font-bold leading-relaxed"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المعرض (بانتظار صورك) -->
+    <section id="projects" class="py-40 bg-slate-900 text-white px-6 text-center">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-8xl font-black mb-12 tracking-tighter gold-glow italic">أعمال الواقع</h2>
+            <p class="text-slate-400 mb-24 text-2xl italic leading-relaxed max-w-3xl mx-auto">"بانتظار إرفاق صورك الحقيقية الـ 13 يا أستاذ عثمان لتظهر هنا بأعلى جودة عرض (4K)."</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 opacity-10 grayscale">
+                <div class="h-[500px] rounded-[4rem] bg-white/5 border border-white/10 flex items-center justify-center text-7xl"><i class="fas fa-camera"></i></div>
+                <div class="h-[500px] rounded-[4rem] bg-white/5 border border-white/10 flex items-center justify-center text-7xl"><i class="fas fa-camera"></i></div>
+                <div class="h-[500px] rounded-[4rem] bg-white/5 border border-white/10 flex items-center justify-center text-7xl"><i class="fas fa-camera"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر (Footer) -->
+    <footer class="bg-white py-48 text-center px-6 border-t border-slate-100">
+        <div class="bg-emerald-950 p-20 md:p-32 rounded-[6rem] inline-block w-full max-w-6xl shadow-2xl relative overflow-hidden text-white">
+            <p class="text-amber-400 mb-10 font-black uppercase tracking-[0.6em] text-sm">Industrial Excellence Since 2010</p>
+            <h3 class="text-5xl md:text-[7rem] font-black mb-20 tracking-tighter italic gold-glow">أ. عثمان عبد الباقي</h3>
+            <a href="tel:0506190901" class="bg-amber-500 text-emerald-950 text-4xl md:text-7xl font-black py-12 px-24 rounded-full inline-block shadow-2xl hover:scale-105 transition-transform" dir="ltr">0506190901</a>
+            <div class="mt-24 flex flex-wrap justify-center gap-16 text-slate-300 font-bold text-xl opacity-60 uppercase tracking-widest border-t border-white/5 pt-16">
+                <span class="flex items-center gap-4"><i class="fas fa-location-dot text-amber-400"></i> جـدة - المنطقة الصناعية</span>
+                <span class="flex items-center gap-4"><i class="fas fa-clock text-amber-400"></i> 8:00 ص - 9:00 م</span>
+            </div>
+        </div>
+        <p class="mt-40 text-slate-300 text-sm font-black uppercase tracking-[1em]">© 2026 Al Nokhba Modern.</p>
+    </footer>
+
+    <!-- شات بوت (AI Chat) -->
+    <div class="fixed bottom-10 right-10 z-[100]">
+        <button onclick="toggleChat()" class="w-24 h-24 bg-emerald-700 text-white rounded-[2.5rem] shadow-2xl flex items-center justify-center text-4xl hover:scale-110 transition active:scale-95 border-4 border-white/20">
+            <i id="chatIcon" class="fas fa-sparkles text-amber-300 animate-pulse"></i>
+        </button>
+        <div id="chatWindow" class="hidden absolute bottom-32 right-0 w-[420px] h-[650px] bg-white rounded-[4rem] shadow-[0_50px_100px_rgba(0,0,0,0.4)] border border-slate-200 flex-col overflow-hidden animate-up">
+            <div class="bg-emerald-950 p-10 text-white flex items-center gap-5">
+                <div class="bg-amber-400 w-16 h-16 rounded-3xl flex items-center justify-center text-emerald-950 text-2xl shadow-xl"><i class="fas fa-user-tie"></i></div>
+                <div class="text-right">
+                    <p class="text-xl font-black">المهندس الذكي</p>
+                    <p class="text-sm text-emerald-100">متاح 24/7 🟢</p>
+                </div>
+            </div>
+            <div id="chatMsgs" class="flex-1 overflow-y-auto p-10 space-y-8 bg-slate-50/50 chat-scroll text-right">
+                <div class="bg-white p-6 rounded-[2.5rem] rounded-bl-none shadow-sm font-bold border border-slate-100 leading-relaxed">مرحباً بك في النخبة الحديثة.. كيف أخدمك اليوم يا أستاذ عثمان؟ 🌹</div>
+            </div>
+            <div class="p-8 bg-white border-t border-slate-100 flex gap-4">
+                <input id="chatInput" type="text" placeholder="اكتب سؤالك هنا.." class="flex-1 bg-slate-100 border-none rounded-[2rem] px-8 py-5 outline-none text-sm font-medium shadow-inner">
+                <button onclick="sendMessage()" class="w-16 h-16 bg-emerald-950 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg hover:bg-emerald-800 transition"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- برمجة الذكاء الاصطناعي (JS) -->
+    <script>
+        const API_KEY = "AIzaSyASb2KJXXMyStTGZwmvHNy4-2Le5s61jCo";
+
+        async function getEstimate() {
+            const input = document.getElementById('estInput');
+            const btn = document.getElementById('estBtn');
+            const resDiv = document.getElementById('estResult');
+            const content = document.getElementById('estContent');
+
+            if (!input.value) return;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> جاري التحليل الهندسي...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: `أنت مهندس متخصص في الأثاث والتصاميم الداخلية. قم بتحليل الطلب التالي وأعطِ تقدير سعر واقعي بالريال السعودي:\n\n"${input.value}"\n\nرد بصيغة JSON فقط بدون أي نص إضافي: { "title": "اسم المنتج", "materials": ["المواد المستخدمة"], "dimensions": "الأبعاد", "estimatedPrice": "السعر التقديري بالريال", "description": "وصف مختصر" }`
+                            }]
+                        }]
+                    })
+                });
+                const data = await response.json();
+                const res = JSON.parse(data.candidates[0].content.parts[0].text);
+
+                resDiv.classList.remove('hidden');
+                resDiv.classList.add('flex');
+                content.innerHTML = `
+                    <div><span class="text-amber-300">📦 المنتج:</span> ${res.title}</div>
+                    <div><span class="text-amber-300">📏 الأبعاد:</span> ${res.dimensions}</div>
+                    <div><span class="text-amber-300">🎨 المواد:</span> ${res.materials.join(' • ')}</div>
+                    <div class="text-3xl border-t border-white/10 pt-6 mt-6"><span class="text-amber-300">💰 السعر التقديري:</span> ${res.estimatedPrice}</div>
+                `;
+                resDiv.scrollIntoView({ behavior: 'smooth' });
+            } catch (e) {
+                content.innerHTML = '<div class="text-red-300">حدث خطأ في الاتصال. حاول لاحقاً.</div>';
+                resDiv.classList.remove('hidden');
+                resDiv.classList.add('flex');
+            }
+            btn.innerHTML = '<i class="fas fa-wand-sparkles"></i> احسب التكلفة التقديرية ✨';
+            btn.disabled = false;
+        }
+
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            win.style.display = (win.style.display === 'flex' ? 'none' : 'flex');
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const msgs = document.getElementById('chatMsgs');
+            if (!input.value) return;
+
+            const text = input.value;
+            msgs.innerHTML += `<div class="flex justify-end animate-up"><div class="bg-emerald-800 text-white p-6 rounded-[2.5rem] rounded-br-none shadow-lg text-lg font-bold max-w-[85%]">${text}</div></div>`;
+            input.value = "";
+            msgs.scrollTop = msgs.scrollHeight;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: `أنت مساعد ذكي لشركة النخبة الحديثة - متخصصة في الأثاث الفاخر والتصاميم الداخلية في جدة. رد بودية واحترافية باللغة العربية على: "${text}"`
+                            }]
+                        }]
+                    })
+                });
+                const data = await response.json();
+                const reply = data.candidates[0].content.parts[0].text;
+                msgs.innerHTML += `<div class="bg-white p-6 rounded-[2.5rem] rounded-bl-none shadow-sm font-bold border border-slate-100 leading-relaxed animate-up">${reply}</div>`;
+                msgs.scrollTop = msgs.scrollHeight;
+            } catch(e) {}
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
+    </script>
+</body>
+</html>

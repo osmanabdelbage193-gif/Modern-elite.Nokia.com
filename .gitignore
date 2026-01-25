@@ -1,0 +1,26 @@
+# بيئات التطوير
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+*.log
+
+# محررات النصوص
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ملفات البناء
+dist/
+build/
+.cache/
+
+# ملفات غير مهمة
+*.bak
+*.tmp
+.temp/
