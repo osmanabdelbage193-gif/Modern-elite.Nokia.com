@@ -89,20 +89,13 @@
                 <span class="bg-emerald-200 text-emerald-800 px-8 py-3 rounded-full font-black text-sm mb-8 inline-block uppercase tracking-widest shadow-sm">AI Price Estimator</span>
                 <h2 class="text-5xl md:text-7xl font-black text-emerald-950 mb-12 tracking-tighter">المُسعّر الذكي للنخبة</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div class="bg-white p-10 md:p-16 rounded-[4rem] shadow-2xl border border-slate-200 text-right">
-                        <div class="space-y-8">
-                            <label class="block text-emerald-950 font-black text-2xl mb-4">صف مشروعك للحصول على سعر تقديري:</label>
-                            <textarea id="estInput" placeholder="مثال: باب فيلا رئيسي خشب سنديان مقاس 2*3 متر مع إطار حديد.." class="w-full bg-slate-50 border border-slate-200 rounded-3xl p-10 outline-none focus:border-amber-500 transition h-56 text-xl shadow-inner"></textarea>
-                            <button onclick="getEstimate()" id="estBtn" class="w-full emerald-gradient text-white font-black py-8 rounded-[2.5rem] shadow-2xl flex justify-center items-center gap-4 text-2xl transition hover:scale-105 active:scale-95">
-                                <i class="fas fa-wand-sparkles"></i> احسب التكلفة التقديرية ✨
-                            </button>
-                        </div>
+                    <div class="bg-white p-16 rounded-[4rem] shadow-xl border border-slate-100 text-right">
+                        <input id="estInput" type="text" placeholder="اكتب متطلبات المشروع (مثال: دولاب خشبي بطول 2 متر، ألمونيوم فضي، 3 أدراج)..." class="w-full bg-slate-50 border border-slate-300 rounded-[2rem] px-8 py-6 text-lg font-bold outline-none focus:border-emerald-600 mb-10 shadow-sm">
+                        <button id="estBtn" onclick="getEstimate()" class="btn-gold w-full py-6 rounded-[2rem] font-black text-xl shadow-lg"><i class="fas fa-wand-sparkles"></i> احسب التكلفة التقديرية ✨</button>
                     </div>
-                    <div id="estResult" class="hidden animate-up bg-emerald-950 text-white p-12 md:p-20 rounded-[5rem] shadow-2xl text-right relative overflow-hidden min-h-[400px]">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full"></div>
-                        <h4 class="text-3xl font-black text-amber-400 mb-10 border-b border-white/10 pb-6 italic">النتيجة التقديرية</h4>
-                        <div id="estContent" class="space-y-6"></div>
-                        <p class="mt-12 text-sm opacity-40 font-light">*هذا السعر تقديري بناءً على وصف الذكاء الاصطناعي ويخضع للمعاينة الفنية.</p>
+                    <div id="estResult" class="hidden flex-col bg-gradient-to-br from-emerald-950 to-emerald-800 p-16 rounded-[4rem] shadow-2xl border border-amber-400/20 text-white">
+                        <p class="text-amber-300 font-black mb-6 text-lg uppercase">نتيجة التحليل الهندسي</p>
+                        <div id="estContent" class="space-y-8 text-right text-xl font-bold leading-relaxed"></div>
                     </div>
                 </div>
             </div>
@@ -145,8 +138,8 @@
             <div class="bg-emerald-950 p-10 text-white flex items-center gap-5">
                 <div class="bg-amber-400 w-16 h-16 rounded-3xl flex items-center justify-center text-emerald-950 text-2xl shadow-xl"><i class="fas fa-user-tie"></i></div>
                 <div class="text-right">
-                    <h4 class="font-black text-2xl tracking-tighter">مستشار النخبة ✨</h4>
-                    <p class="text-xs opacity-60 uppercase font-bold tracking-widest mt-1">AI Expert Support</p>
+                    <p class="text-xl font-black">المهندس الذكي</p>
+                    <p class="text-sm text-emerald-100">متاح 24/7 🟢</p>
                 </div>
             </div>
             <div id="chatMsgs" class="flex-1 overflow-y-auto p-10 space-y-8 bg-slate-50/50 chat-scroll text-right">
@@ -175,12 +168,14 @@
 
             try {
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: `Estimate high-end price range in SAR for Al Nokhba Modern company based on: "${input.value}". Return JSON: {estimatedRange, breakdown: [{item, factor}], complexity, tip}` }] }],
-                        systemInstruction: { parts: [{ text: "أنت خبير مبيعات وتسعير هندسي سعودي محترف." }] },
-                        generationConfig: { responseMimeType: "application/json" }
+                        contents: [{
+                            parts: [{
+                                text: `أنت مهندس متخصص في الأثاث والتصاميم الداخلية. قم بتحليل الطلب التالي وأعطِ تقدير سعر واقعي بالريال السعودي:\n\n"${input.value}"\n\nرد بصيغة JSON فقط بدون أي نص إضافي: { "title": "اسم المنتج", "materials": ["المواد المستخدمة"], "dimensions": "الأبعاد", "estimatedPrice": "السعر التقديري بالريال", "description": "وصف مختصر" }`
+                            }]
+                        }]
                     })
                 });
                 const data = await response.json();
@@ -189,15 +184,16 @@
                 resDiv.classList.remove('hidden');
                 resDiv.classList.add('flex');
                 content.innerHTML = `
-                    <p class="text-7xl font-black mb-10 gold-glow leading-none">${res.estimatedRange} <span class="text-2xl">ر.س</span></p>
-                    <div class="space-y-4 mb-10">
-                        ${res.breakdown.map(b => `<div class="flex justify-between items-center bg-white/5 p-5 rounded-[2rem] border border-white/5 font-bold"><span class="opacity-70">${b.item}</span><span class="text-amber-400 text-sm font-black">${b.factor}</span></div>`).join('')}
-                    </div>
-                    <div class="p-8 bg-amber-400 text-emerald-950 rounded-[3rem] font-black italic text-lg shadow-xl">"نصيحة المهندس: ${res.tip}"</div>
+                    <div><span class="text-amber-300">📦 المنتج:</span> ${res.title}</div>
+                    <div><span class="text-amber-300">📏 الأبعاد:</span> ${res.dimensions}</div>
+                    <div><span class="text-amber-300">🎨 المواد:</span> ${res.materials.join(' • ')}</div>
+                    <div class="text-3xl border-t border-white/10 pt-6 mt-6"><span class="text-amber-300">💰 السعر التقديري:</span> ${res.estimatedPrice}</div>
                 `;
                 resDiv.scrollIntoView({ behavior: 'smooth' });
             } catch (e) {
-                alert("يرجى التأكد من اتصال الإنترنت أو مفتاح الـ API.");
+                content.innerHTML = '<div class="text-red-300">حدث خطأ في الاتصال. حاول لاحقاً.</div>';
+                resDiv.classList.remove('hidden');
+                resDiv.classList.add('flex');
             }
             btn.innerHTML = '<i class="fas fa-wand-sparkles"></i> احسب التكلفة التقديرية ✨';
             btn.disabled = false;
@@ -220,16 +216,19 @@
 
             try {
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: text }] }],
-                        systemInstruction: { parts: [{ text: "أنت مستشار مبيعات فني خبير في شركة النخبة الحديثة للنجارة والحدادة والألمونيوم. رد بلهجة سعودية محترمة وفخمة." }] }
+                        contents: [{
+                            parts: [{
+                                text: `أنت مساعد ذكي لشركة النخبة الحديثة - متخصصة في الأثاث الفاخر والتصاميم الداخلية في جدة. رد بودية واحترافية باللغة العربية على: "${text}"`
+                            }]
+                        }]
                     })
                 });
                 const data = await response.json();
-                const aiMsg = data.candidates[0].content.parts[0].text;
-                msgs.innerHTML += `<div class="flex justify-start animate-up"><div class="bg-white text-emerald-950 p-6 rounded-[2.5rem] rounded-bl-none shadow-sm border border-slate-100 text-lg font-bold max-w-[85%] leading-loose">${aiMsg}</div></div>`;
+                const reply = data.candidates[0].content.parts[0].text;
+                msgs.innerHTML += `<div class="bg-white p-6 rounded-[2.5rem] rounded-bl-none shadow-sm font-bold border border-slate-100 leading-relaxed animate-up">${reply}</div>`;
                 msgs.scrollTop = msgs.scrollHeight;
             } catch(e) {}
         }
@@ -238,4 +237,3 @@
     </script>
 </body>
 </html>
-
